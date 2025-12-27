@@ -1,14 +1,19 @@
-import { useState } from 'react'
-import React from 'react'
-import { NavbarPreview } from './components/preview/NavbarPreview'
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { BuilderProvider } from './contexts/BuilderContext';
+import Builder from './components/builder/Builder';
+import './App.css';
 
 function App() {
-
   return (
-    <>
-      <NavbarPreview/>
-    </>
-  )
+    <Router>
+      <BuilderProvider>
+        <div className="App">
+          <Builder />
+        </div>
+      </BuilderProvider>
+    </Router>
+  );
 }
 
-export default App
+export default App;
